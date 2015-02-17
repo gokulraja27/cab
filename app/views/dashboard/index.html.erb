@@ -1,0 +1,18 @@
+<h1> Booking </h1>
+
+
+
+<%= form_tag('/booking', method: :get, class: 'form-horizontal') do %>
+  <%= label :booking, :from %>
+  <%= text_field :booking, :from %><br>
+
+  <%= label :booking, :to %>
+  <%= text_field :booking, :to %><br>
+
+  <%= label :booking, :date%>
+  <%= date_select :booking, :date%><br>
+
+  <%= select_tag "vehicle", options_for_select([ "Indigo", "Santro", "Tourister", "407", "Bus" ], "Indigo") %><br>
+
+  <%= submit_tag("book now", class: "btn btn-large btn-primary") %>
+<% end %>
