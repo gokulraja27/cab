@@ -8,6 +8,8 @@
   <dd><%= @vehicle.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:vehicle_type_id) %>:</strong></dt>
   <dd><%= @vehicle.vehicle_type_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:count) %>:</strong></dt>
+  <dd><%= @vehicle.count %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
