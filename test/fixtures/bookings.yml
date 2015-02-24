@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_place: MyString
+  to_place: MyString
+  from_date: 2015-02-24
+  to_date: 2015-02-24
+  vehicle_id: 
+
+two:
+  from_place: MyString
+  to_place: MyString
+  from_date: 2015-02-24
+  to_date: 2015-02-24
+  vehicle_id: 

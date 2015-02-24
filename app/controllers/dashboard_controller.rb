@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
 
   def index
+    @booking = Booking.new
 
   end
 
@@ -13,6 +14,7 @@ class DashboardController < ApplicationController
   end
 
   def booking
+    binding.pry
     flash[:notice] = "Successfully Booked"
     redirect_to authenticated_root_path
   end

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :bookings
+
+  resources :places
+
+  resources :vehicles
+
+  resources :vehicle_types
+
   devise_scope :user do
     authenticated :user do
       root 'dashboard#index', as: :authenticated_root
