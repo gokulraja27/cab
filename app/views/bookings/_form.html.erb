@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :from_place %><br>
-    <%= f.text_field :from_place %>
+    <%= f.select(:from_place_id, Place.all.collect {|p| [p.name, p.id]}, :prompt => 'Select')%>
   </div>
   <div class="field">
     <%= f.label :to_place %><br>
-    <%= f.text_field :to_place %>
+    <%= f.select(:to_place_id, Place.all.collect {|p| [p.name, p.id]}, :prompt => 'Select')%>
   </div>
   <div class="field">
     <%= f.label :from_date %><br>
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :vehicle_id %><br>
-    <%= f.text_field :vehicle_id %>
+    <%= f.select(:vehicle_id, Vehicle.all.collect {|v| [v.name, v.id]}, :prompt => 'Select')%>
   </div>
   <div class="actions">
     <%= f.submit %>

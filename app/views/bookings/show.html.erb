@@ -2,12 +2,12 @@
 
 <p>
   <strong>From place:</strong>
-  <%= @booking.from_place %>
+  <%= @booking.from_place.place_name %>
 </p>
 
 <p>
   <strong>To place:</strong>
-  <%= @booking.to_place %>
+  <%= @booking.to_place.place_name %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Vehicle:</strong>
-  <%= @booking.vehicle %>
+  <%= @booking.vehicle.vehicle_name %>
 </p>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |

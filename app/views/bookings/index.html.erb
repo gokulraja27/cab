@@ -17,11 +17,11 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.from_place %></td>
-        <td><%= booking.to_place %></td>
+        <td><%= booking.from_place.place_name %></td>
+        <td><%= booking.to_place.place_name %></td>
         <td><%= booking.from_date %></td>
         <td><%= booking.to_date %></td>
-        <td><%= booking.vehicle %></td>
+        <td><%= booking.vehicle.vehicle_name %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>

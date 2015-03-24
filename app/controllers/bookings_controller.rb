@@ -29,6 +29,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
+        UserMailer.confirmation_email(current_user).deliver
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
@@ -70,6 +71,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:from_place, :to_place, :from_date, :to_date, :vehicle_id)
+      params.require(:booking).permit(:from_place_id, :to_place_id, :from_date, :to_date, :vehicle_id)
     end
 end
