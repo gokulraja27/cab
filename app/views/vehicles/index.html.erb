@@ -9,6 +9,7 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:vehicle_type_id) %></th>
       <th><%= model_class.human_attribute_name(:count) %></th>
+      <th><%= model_class.human_attribute_name(:fare) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -18,8 +19,9 @@
       <tr>
         <td><%= link_to vehicle.id, vehicle_path(vehicle) %></td>
         <td><%= vehicle.name %></td>
-        <td><%= vehicle.vehicle_type_id %></td>
+        <td><%= vehicle.vehicle_type.type %></td>
         <td><%= vehicle.count%></td>
+        <td><%= vehicle.fare%></td>
         <td><%= vehicle.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

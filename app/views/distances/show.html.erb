@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start place:</strong>
+  <%= @distance.start_place.place_name %>
+</p>
+
+<p>
+  <strong>End place:</strong>
+  <%= @distance.end_place.place_name %>
+</p>
+
+<p>
+  <strong>Kilometer:</strong>
+  <%= @distance.kilometer %>
+</p>
+
+<%= link_to 'Edit', edit_distance_path(@distance) %> |
+<%= link_to 'Back', distances_path %>

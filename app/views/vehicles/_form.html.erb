@@ -25,9 +25,16 @@
   <div class="control-group">
     <%= f.label :vehicle_type_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :vehicle_type_id, :class => 'form-control' %>
+      <%= f.select :vehicle_type_id, VehicleType.all.collect {|v| [v.name, v.id]}, {}, {:class => 'form-control'} %>
     </div>
     <%= error_span(@vehicle[:vehicle_type_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fare, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :fare, :class => 'form-control' %>
+    </div>
+    <%= error_span(@vehicle[:fare]) %>
   </div>
   <div class="control-group">
     <%= f.label :count, :class => 'control-label' %>

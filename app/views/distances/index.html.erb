@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Distances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start place</th>
+      <th>End place</th>
+      <th>Kilometer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @distances.each do |distance| %>
+      <tr>
+        <td><%= distance.start_place.place_name %></td>
+        <td><%= distance.end_place.place_name %></td>
+        <td><%= distance.kilometer %></td>
+        <td><%= link_to 'Show', distance %></td>
+        <td><%= link_to 'Edit', edit_distance_path(distance) %></td>
+        <td><%= link_to 'Destroy', distance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Distance', new_distance_path %>

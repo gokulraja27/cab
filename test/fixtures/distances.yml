@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_place_id: 1
+  end_place_id: 1
+  kilometer: 1
+
+two:
+  start_place_id: 1
+  end_place_id: 1
+  kilometer: 1
