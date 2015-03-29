@@ -1,0 +1,29 @@
+<%= form_for(@distance) do |f| %>
+  <% if @distance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@distance.errors.count, "error") %> prohibited this distance from being saved:</h2>
+
+      <ul>
+      <% @distance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_place_id %><br>
+    <%= f.select :start_place_id, Place.all.collect {|p| [p.name, p.id]}, {} %>
+  </div>
+  <div class="field">
+    <%= f.label :end_place_id %><br>
+    <%= f.select :end_place_id, Place.all.collect {|p| [p.name, p.id]}, {} %>
+  </div>
+  <div class="field">
+    <%= f.label :kilometer %><br>
+    <%= f.number_field :kilometer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

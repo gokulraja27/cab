@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        UserMailer.confirmation_email(current_user).deliver
+        UserMailer.confirmation_email(current_user, @booking).deliver_now
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
